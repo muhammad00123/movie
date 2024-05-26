@@ -7,6 +7,7 @@ import MediaSearch from "../pages/MediaSearch";
 import PasswordUpdate from "../pages/PasswordUpdate";
 import ReviewList from "../pages/ReviewList";
 import ProtectedPage from "../components/common/ProtectedPage";
+import Paid from "../Paid/Paid";
 
 export const routesGen = {
   home: "/",
@@ -16,24 +17,25 @@ export const routesGen = {
   person: (id) => `/person/${id}`,
   favoriteList: "/favorites",
   reviewList: "/reviews",
-  passwordUpdate: "password-update"
+  passwordUpdate: "password-update",
+  paid: "/paid",
 };
 
 const routes = [
   {
     index: true,
     element: <HomePage />,
-    state: "home"
+    state: "home",
   },
   {
     path: "/person/:personId",
     element: <PersonDetail />,
-    state: "person.detail"
+    state: "person.detail",
   },
   {
     path: "/search",
     element: <MediaSearch />,
-    state: "search"
+    state: "search",
   },
   {
     path: "/password-update",
@@ -42,7 +44,7 @@ const routes = [
         <PasswordUpdate />
       </ProtectedPage>
     ),
-    state: "password.update"
+    state: "password.update",
   },
   {
     path: "/favorites",
@@ -51,7 +53,7 @@ const routes = [
         <FavoriteList />
       </ProtectedPage>
     ),
-    state: "favorites"
+    state: "favorites",
   },
   {
     path: "/reviews",
@@ -60,16 +62,21 @@ const routes = [
         <ReviewList />
       </ProtectedPage>
     ),
-    state: "reviews"
+    state: "reviews",
+  },
+  {
+    path: "/paid", // Добавьте путь для страницы paid
+    element: <Paid />, // Используйте компонент PaidPage для элемента маршрута
+    state: "paid",
   },
   {
     path: "/:mediaType",
-    element: <MediaList />
+    element: <MediaList />,
   },
   {
     path: "/:mediaType/:mediaId",
-    element: <MediaDetail />
-  }
+    element: <MediaDetail />,
+  },
 ];
 
 export default routes;

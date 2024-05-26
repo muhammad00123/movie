@@ -21,7 +21,7 @@ const UserMenu = () => {
         <>
           <Typography
             variant="h6"
-            sx={{ cursor: "pointer", userSelect: "none" }}
+            sx={{ cursor: "pointer", userSelect: "none"  }}
             onClick={toggleMenu}
           >
             {user.displayName}

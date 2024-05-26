@@ -32,7 +32,7 @@ const Sidebar = ({ open, toggleSidebar }) => {
         </Stack>
       </Toolbar>
       <List sx={{ paddingX: "30px" }}>
-        <Typography variant="h6" marginBottom="20px">MENU</Typography>
+        <Typography variant="h6" marginTop="30px">MENU</Typography>
         {menuConfigs.main.map((item, index) => (
           <ListItemButton
             key={index}
